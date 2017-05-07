@@ -1,0 +1,59 @@
+.home {
+	height: 100%;
+	width: 100%;
+	background: url(app/assets/img/background.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0 -60px;
+	filter: grayscale(.5);
+}
+
+.home-footer {
+	position: fixed;
+	height: 50px;
+	bottom: 0;
+	width: 100%;
+	background: rgb(34, 33, 36);
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+
+.home__logo {
+	margin: auto;
+	height: 150px;
+	display: block;
+	padding-top: 30px;
+}
+
+.home__chrome-label {
+	position: absolute;
+	top: 30px;
+	left: 15px;
+}
+
+.home__quote {
+	font-size: 18px;
+	margin-top: 30px;
+	font-style: italic;
+	text-align: center;
+}
+
+.home__start-button {
+	outline: 0;
+	color: #fff;
+	width: 100px;
+	height: 100px;
+	display: block;
+	cursor: pointer;
+	font-size: 11px;
+	background: none;
+	margin: 30px auto;
+	border-radius: 50%;
+	border: 3px solid #fff;
+}
+
+.webgl {
+	height: 30px;
+	opacity: .7;
+}

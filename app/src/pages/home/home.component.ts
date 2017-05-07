@@ -1,11 +1,10 @@
 import { Component } from '@angular/core';
 
 @Component({
-	template: `
-		<h2>ATLAWorld2</h2>
-	`
+	moduleId: module.id,
+	templateUrl: './home.component.html',
+	styleUrls: [ './home.component.css' ]
 })
-
 export class HomePageComponent {
 
 }
