@@ -1,6 +1,6 @@
 {
-  "name": "angular2-intro",
-  "version": "1.0.0",
+  "name": "ATLAWorld2",
+  "version": "0.0.1",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
