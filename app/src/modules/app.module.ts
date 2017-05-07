@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppComponent } from '../components/app.component';
+import { AppComponent } from '../components/app/app.component';
 import { HomePageComponent } from '../pages/home/home.component';
 
 import { Routing } from '../routing/app.routes';
@@ -19,6 +19,4 @@ import { Routing } from '../routing/app.routes';
 		AppComponent
 	]
 })
-export class AppModule {
-	
-}
+export class AppModule { }
