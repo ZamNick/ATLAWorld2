@@ -1,0 +1,6 @@
+# Dependency directories
+node_modules
+
+# JavaScript files
+app/**/*.js
+app/**/*.js.map
