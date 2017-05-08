@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import * as THREE from 'three';
 
 import { CONSTANTS } from '../../constants/app.constants';
 
@@ -8,10 +9,21 @@ import { CONSTANTS } from '../../constants/app.constants';
 })
 export class MapPage {
 
-	public scene : any = null;
+	private scene    : THREE.Scene     = null;
+	private camera   : THREE.Camera    = null;
+	private renderer : THREE.Renderer  = null;
 
 	ngOnInit() {
-		// this.scene = new THREE.Scene();
+		this.scene = new THREE.Scene();
+		this.camera = new THREE.PerspectiveCamera(
+			CONSTANTS.CAMERA.FRUSTUM,
+			CONSTANTS.CAMERA.ASPECT_RATIO,
+			CONSTANTS.CAMERA.NEAR,
+			CONSTANTS.CAMERA.FAR
+		);
+		this.renderer = new THREE.WebGLRenderer();
+		this.renderer.setSize(window.innerWidth, window.innerHeight);
+		document.getElementsByClassName('scene')[0].appendChild(this.renderer.domElement);
 	}
 
 }

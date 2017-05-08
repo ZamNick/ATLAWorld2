@@ -28,6 +28,10 @@
 }
 
 .home__start-button {
+	text-decoration: none;
+}
+
+.home__start-button button {
 	outline: 0;
 	color: #fff;
 	width: 100px;
