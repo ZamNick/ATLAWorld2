@@ -1,5 +1,5 @@
 {
-  "name": "ATLAWorld2",
+  "name": "ATLA World",
   "version": "0.0.1",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
@@ -16,10 +16,10 @@
     "@angular/platform-browser": "2.4.0",
     "@angular/platform-browser-dynamic": "2.4.0",
     "@angular/router": "3.4.0",
-
     "core-js": "2.4.1",
     "rxjs": "5.0.1",
     "systemjs": "0.19.40",
+    "three": "^0.85.2",
     "zone.js": "0.7.4"
   },
   "devDependencies": {
