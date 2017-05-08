@@ -1,5 +1,5 @@
 {
-  "name": "ATLA World",
+  "name": "ATLAWorld2",
   "version": "0.0.1",
   "scripts": {
     "start": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
