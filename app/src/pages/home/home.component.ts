@@ -5,4 +5,6 @@ import { Component } from '@angular/core';
 	templateUrl: './resources/home.component.html',
 	styleUrls: [ './resources/home.component.css' ]
 })
-export class HomePageComponent { }
+export class HomePageComponent {
+	public currentDate : Date = new Date();
+}
