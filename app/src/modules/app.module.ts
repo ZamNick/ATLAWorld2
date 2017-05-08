@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from '../components/app/app.component';
-import { HomePageComponent } from '../pages/home/home.component';
+import { HomePage } from '../pages/home/home.page';
 
 import { Routing } from '../routing/app.routes';
 
@@ -13,7 +13,7 @@ import { Routing } from '../routing/app.routes';
 	],
 	declarations: [
 		AppComponent,
-		HomePageComponent
+		HomePage
 	],
 	bootstrap: [
 		AppComponent
