@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import * as THREE from 'three';
 
 import { CONSTANTS } from '../../constants/app.constants';
@@ -10,6 +10,8 @@ import { ResourcesLoader } from '../../services/resourcesLoader/resourcesLoader.
 	templateUrl: './resources/map.page.html'
 })
 export class MapPage {
+
+	@ViewChild('scene') sceneElementRef : ElementRef;
 
 	private scene    : THREE.Scene     = null;
 	private camera   : THREE.Camera    = null;
@@ -27,9 +29,7 @@ export class MapPage {
 		);
 		this.renderer = new THREE.WebGLRenderer();
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
-
-		// DANGEROUS
-		document.getElementsByClassName('scene')[0].appendChild(this.renderer.domElement);
+		this.sceneElementRef.nativeElement.appendChild(this.renderer.domElement);
 
 		this.resourceLoader.getImage('app/assets/img/map.png').then((image) => {
 			
