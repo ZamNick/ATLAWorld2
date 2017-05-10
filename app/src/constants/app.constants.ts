@@ -12,6 +12,13 @@ export const CONSTANTS = {
 		MAX: 2200,
 		MIN: 700,
 		DELTA: 10
+	},
+
+	MAP: {
+		SETTINGS: {
+			URL: 'app/assets/img/map.png',
+			SEGMENTS: 32
+		}
 	}
 
 };

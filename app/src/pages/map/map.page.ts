@@ -31,7 +31,7 @@ export class MapPage {
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 		this.sceneElementRef.nativeElement.appendChild(this.renderer.domElement);
 
-		this.resourceLoader.getImage('app/assets/img/map.png').then((image) => {
+		this.resourceLoader.getImage(CONSTANTS.MAP.SETTINGS.URL).then((image) => {
 			
 			let texture = new THREE.Texture();
 
@@ -39,9 +39,10 @@ export class MapPage {
 			texture.needsUpdate = true;
 
 			let geometry = new THREE.PlaneGeometry(
-				texture.image.naturalWidth, 
-				texture.image.naturalHeight, 
-			32);
+				texture.image.naturalWidth,
+				texture.image.naturalHeight,
+				CONSTANTS.MAP.SETTINGS.SEGMENTS
+			);
 
 			let material = new THREE.MeshBasicMaterial({
 				map: texture,
