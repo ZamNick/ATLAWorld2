@@ -9,7 +9,8 @@ import { ImageLoader } from '../../services/loaders/imageLoader/imageLoader.serv
 
 @Component({
 	moduleId: module.id,
-	templateUrl: './resources/map.page.html'
+	templateUrl: './resources/map.page.html',
+	styleUrls: [ './resources/map.page.css' ]
 })
 export class MapPage {
 
@@ -32,11 +33,12 @@ export class MapPage {
 		);
 		this.renderer = new THREE.WebGLRenderer();
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
-		this.sceneElementRef.nativeElement.appendChild(this.renderer.domElement);
 
 		this.imageLoader.loadAll(CONSTANTS.MAP.IMAGES, this.spinnerComponent).then(() => {
 			
-			this.spinnerComponent.hide();
+			// this.sceneElementRef.nativeElement.appendChild(this.renderer.domElement);
+
+			/*this.spinnerComponent.hide();
 
 			let texture = new THREE.Texture();
 
@@ -56,7 +58,7 @@ export class MapPage {
 
 			let map = new THREE.Mesh(geometry, material);
 
-			this.scene.add(map);
+			this.scene.add(map);*/
 		});
 
 		this.camera.position.z = 2200;

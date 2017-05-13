@@ -1,0 +1,24 @@
+.map {
+	height: 100%;
+	width: 100%;
+	background: url(app/assets/img/background2.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0px 100px;
+	background-color: rgb(37, 37, 37);
+}
+
+.map header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 25px;
+}
+
+.map header img {
+	height: 150px;
+}
+
+.map header spinner {
+	padding-top: 20px;
+}
