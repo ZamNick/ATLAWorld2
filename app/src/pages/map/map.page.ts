@@ -1,6 +1,8 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import * as THREE from 'three';
 
+import { SpinnerComponent } from '../../components/spinner/spinner.component';
+
 import { CONSTANTS } from '../../constants/app.constants';
 
 import { ResourcesLoader } from '../../services/resourcesLoader/resourcesLoader.service';
@@ -11,7 +13,8 @@ import { ResourcesLoader } from '../../services/resourcesLoader/resourcesLoader.
 })
 export class MapPage {
 
-	@ViewChild('scene') sceneElementRef : ElementRef;
+	@ViewChild('spinner') spinnerComponent  : SpinnerComponent;
+	@ViewChild('scene')   sceneElementRef 	: ElementRef;
 
 	private scene    : THREE.Scene     = null;
 	private camera   : THREE.Camera    = null;
@@ -31,11 +34,13 @@ export class MapPage {
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 		this.sceneElementRef.nativeElement.appendChild(this.renderer.domElement);
 
-		this.resourceLoader.getImage(CONSTANTS.MAP.SETTINGS.URL).then((image) => {
+		this.resourceLoader.loadImages(CONSTANTS.MAP.IMAGES, this.spinnerComponent).then(() => {
 			
+			this.spinnerComponent.hide();
+
 			let texture = new THREE.Texture();
 
-			texture.image = image;
+			texture.image = this.resourceLoader.getImage(CONSTANTS.MAP.SETTINGS.URL);
 			texture.needsUpdate = true;
 
 			let geometry = new THREE.PlaneGeometry(

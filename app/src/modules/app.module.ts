@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from '../components/app/app.component';
+import { SpinnerComponent } from '../components/spinner/spinner.component';
 
 import { HomePage } from '../pages/home/home.page';
 import { MapPage } from '../pages/map/map.page';
@@ -17,6 +18,7 @@ import { ResourcesLoader } from '../services/resourcesLoader/resourcesLoader.ser
 	],
 	declarations: [
 		AppComponent,
+		SpinnerComponent,
 		HomePage,
 		MapPage
 	],
