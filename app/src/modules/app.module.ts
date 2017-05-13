@@ -9,7 +9,7 @@ import { MapPage } from '../pages/map/map.page';
 
 import { Routing } from '../routing/app.routes';
 
-import { ResourcesLoader } from '../services/resourcesLoader/resourcesLoader.service';
+import { ImageLoader } from '../services/loaders/imageLoader/imageLoader.service';
 
 @NgModule({
 	imports: [
@@ -23,7 +23,7 @@ import { ResourcesLoader } from '../services/resourcesLoader/resourcesLoader.ser
 		MapPage
 	],
 	providers: [
-		ResourcesLoader
+		ImageLoader
 	],
 	bootstrap: [
 		AppComponent

@@ -1,11 +1,11 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
 import * as THREE from 'three';
 
-import { SpinnerComponent } from '../../components/spinner/spinner.component';
-
 import { CONSTANTS } from '../../constants/app.constants';
 
-import { ResourcesLoader } from '../../services/resourcesLoader/resourcesLoader.service';
+import { SpinnerComponent } from '../../components/spinner/spinner.component';
+
+import { ImageLoader } from '../../services/loaders/imageLoader/imageLoader.service';
 
 @Component({
 	moduleId: module.id,
@@ -20,7 +20,7 @@ export class MapPage {
 	private camera   : THREE.Camera    = null;
 	private renderer : THREE.Renderer  = null;
 
-	constructor(private resourceLoader : ResourcesLoader) { }
+	constructor(private imageLoader : ImageLoader) { }
 
 	ngOnInit() {
 		this.scene = new THREE.Scene();
@@ -34,13 +34,13 @@ export class MapPage {
 		this.renderer.setSize(window.innerWidth, window.innerHeight);
 		this.sceneElementRef.nativeElement.appendChild(this.renderer.domElement);
 
-		this.resourceLoader.loadImages(CONSTANTS.MAP.IMAGES, this.spinnerComponent).then(() => {
+		this.imageLoader.loadAll(CONSTANTS.MAP.IMAGES, this.spinnerComponent).then(() => {
 			
 			this.spinnerComponent.hide();
 
 			let texture = new THREE.Texture();
 
-			texture.image = this.resourceLoader.getImage(CONSTANTS.MAP.SETTINGS.URL);
+			texture.image = this.imageLoader.get(CONSTANTS.MAP.SETTINGS.URL);
 			texture.needsUpdate = true;
 
 			let geometry = new THREE.PlaneGeometry(
